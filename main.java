@@ -1,5 +1,11 @@
-public class main { // Class name. That class has to be the filename.
+public class Main {
 	public static void main(String[] args) {
-		System.out.println("Java is super gay C++ better");
+		int[] arr = new int[100];
+		int index = 0;
+		while (index < 100) {
+			arr[index] = 2 - index % 2;
+		}
+		System.out.println(arr[50]);
+		index = index + 1;
 	}
 }
