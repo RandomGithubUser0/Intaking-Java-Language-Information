@@ -1,6 +1,12 @@
-// Add x values to an array, (with +2 arithmetic progression) then sum it all up with the arithmetic sum formula and for loop.
+package Java101Projects.Extras;
+/* 
 
-public class Experimental {
+Add x values to an array. (with +2 arithmetic progression) T
+Then sum it all up with the arithmetic sum formula and for loop.
+All the elements should be printed out in a single string.
+
+*/
+public class SumOfArithmeticSequence {
     static int AmountAddition = 25;
     static double[] ToAdd = new double[AmountAddition];
     public static void main(String[] args) {
