@@ -1,4 +1,4 @@
-package Java101Projects.Extras;
+package Java101.Extras;
 /* 
  
 Basic factorial recursion function in java. O(n)

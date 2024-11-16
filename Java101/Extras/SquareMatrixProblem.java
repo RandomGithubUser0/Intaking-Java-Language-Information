@@ -1,4 +1,4 @@
-package Java101Projects.Extras;
+package Java101.Extras;
 /*
 
 Add elements to a square matrix.

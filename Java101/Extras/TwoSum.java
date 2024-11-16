@@ -1,4 +1,4 @@
-package Java101Projects.Extras;
+package Java101.Extras;
 /* 
 
 Write the solution to twosum in java with both the O(n^2) method and the O(n) method.

@@ -1,4 +1,4 @@
-package Java101Projects;
+package Java101;
 
 /* 
 
@@ -40,6 +40,11 @@ public class PracticeProblems {
             }
         }
         return Sum;
+    }
+    static double phi = (1 + Math.sqrt(5)) / 2;
+    static double Altfib(double n){
+        double Term = Math.PI;
+        return Term;
     }
 
     // Extra method for array visualization

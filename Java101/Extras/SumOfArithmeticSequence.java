@@ -1,4 +1,4 @@
-package Java101Projects.Extras;
+package Java101.Extras;
 /* 
 
 Add x values to an array. (with +2 arithmetic progression) T
