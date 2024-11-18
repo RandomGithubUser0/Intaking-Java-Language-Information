@@ -1,6 +1,6 @@
 package Java102.Classes;
 
-public class Circle {
+public class Circle implements Shape {
     public final Point center;
 	public final double radius;
 
@@ -47,6 +47,43 @@ public class Circle {
 		return new Circle(center, radius * k);
 	}
 
+	/** 
+	* @return The circle that results from 3 points.
+	*/
+	public static Circle fromPoints(Point p1, Point p2, Point p3) {
+		/* 
+		* Keep in mind it is also possible to find the the circumradius via the formula + heron's formula.
+		* Then, find circumcenter by using the circumradius and extending the perpendicular bisector.
+		*/ 
+        Point midpointA = new Point((p1.x + p2.x) / 2, (p1.y + p2.y) / 2);
+        Point midpointB = new Point((p2.x + p3.x) / 2, (p2.y + p3.y) / 2);
+
+        Double slopeA = (p1.y - p2.y) / (p1.x - p2.x);
+        Double slopeB = (p2.y - p3.y) / (p2.x - p3.x);
+
+        Double perpSlopeA = -1 / slopeA;
+        Double perpSlopeB = -1 / slopeB;
+
+        Double xIntersection = 0.0;
+        Double yIntersection = 0.0;
+
+        if (slopeA == 0.0) { 
+            xIntersection = midpointA.x;
+            yIntersection = perpSlopeB * (xIntersection - midpointB.x) + midpointB.y;
+        } else if (slopeB == 0.0) {
+            xIntersection = midpointB.x;
+            yIntersection = perpSlopeA * (xIntersection - midpointA.x) + midpointA.y;
+        } else {
+			xIntersection = ((perpSlopeA * midpointA.x) - (perpSlopeB * midpointB.x)) / (perpSlopeA - perpSlopeB);
+            yIntersection = perpSlopeA * (xIntersection - midpointA.x) + midpointA.y;
+        }
+
+        // Circumcenter
+        Point circumcenter = new Point(xIntersection, yIntersection);
+        Double circumradius = Point.distance(circumcenter, p1); // Equal distances throughout all points
+
+        return new Circle(circumcenter, circumradius);
+    }
 	@Override
 	public String toString() {
 		return "(center: " + center + "; radius: " + radius + ")";

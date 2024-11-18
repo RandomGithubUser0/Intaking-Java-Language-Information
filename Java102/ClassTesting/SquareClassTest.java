@@ -9,10 +9,12 @@ public class SquareClassTest {
 
     public static void main(String[] args) {
         Square mySquare = new Square(cornerPoint, length);
+        Point[] Corners = mySquare.corners();
         System.out.println(mySquare.area());
         System.out.println(mySquare.perimeter());
         for (int i = 0; i < 4; i++){
-            System.out.println(mySquare.corners()[i]);
+            System.out.println(Corners[i]);
         }
+        System.out.println(mySquare.isOn(new Point(0, 3)));
     }
 }

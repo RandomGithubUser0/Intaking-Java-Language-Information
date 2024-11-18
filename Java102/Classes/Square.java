@@ -1,6 +1,6 @@
 package Java102.Classes;
 
-public class Square {
+public class Square implements Shape {
 	public final Point corner;
 	public final double sideLength;
 
@@ -35,9 +35,20 @@ public class Square {
 	* @return Whether point p part of/on the border of the square.
 	*/
 	public boolean isOn(Point p) {
-        if ((p.x == sideLength) || (p.y == sideLength)){
-            return true;
-        }
+		double standardX = p.x - corner.x; // Not needed but makes it easier to present
+		double standardY = p.y - corner.y;
+		if (
+			(standardX > sideLength) || (standardY > sideLength) ||
+			(standardX < 0) || (standardX < 0)
+			){
+			return false;
+		} // Bound inside square
+		if (
+			(standardX == 0) || (standardY == 0) ||
+			(standardX == sideLength) || (standardY == sideLength) 
+		){	
+			return true;
+		}
 		return false;
 	}
 	
