@@ -3,7 +3,7 @@ package Java101.FibMethods.Slow;
 public class InefficientRecursive {
     public static int fib(int n){
         if (n <= 1){
-            return n;
+            return 1;
         }
         return fib(n - 1) + fib(n - 2);
     }
